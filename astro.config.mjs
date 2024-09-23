@@ -7,7 +7,6 @@ export default defineConfig({
   },
   // add yur domain name here
   site: 'https://stratussoftworks.dev',
-  base: "stratus",
   compressHTML: true,
   integrations: [sitemap()]
 });
