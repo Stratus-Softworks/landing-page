@@ -60,5 +60,12 @@ import "../styles/global.css";
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
 ></script>
 
-<!-- Remove analytics tag -->
-<script async defer data-website-id="4e24010d-9b5e-4493-bd69-4cc2f370838b" src="https://stats.andreuzza.com/umami.js"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DPWGTK9FG5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DPWGTK9FG5');
+</script>
