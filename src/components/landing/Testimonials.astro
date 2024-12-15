@@ -1,50 +1,103 @@
-<div
-  class="text-white text-xs gap-3 gap-y-12 grid grid-cols-1 md:grid-cols-4 mx-auto p-8 sm:grid-cols-2">
-  <div class="flex flex-col justify-between h-full">
-    <p class="text-[#ed642c]">
-      John seamlessly merges design and coding, creating polished designs that
-      strike a perfect balance between trends and originality. His approach of
-      crafting designs directly in code yields exceptional results, surpassing
-      expectations.
-    </p>
-    <div class="mt-3">
-      <span class="block font-semibold mt-3">Emily Reynolds</span>
-      <span class="block text-eagle">CEO of Swift Designworks</span>
+<script>
+  let currentIndex = 0;
+  let interval;
+
+  // Function to show the active slide
+  function showSlide(index) {
+    const slides = document.querySelectorAll(".testimonial-slide");
+    const indicators = document.querySelectorAll(".carousel-indicator");
+
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("hidden", i !== index);
+      indicators[i].classList.toggle("bg-[#ed642c]", i === index);
+      indicators[i].classList.toggle("bg-gray-600", i !== index);
+    });
+
+    currentIndex = index;
+  }
+
+  // Move to the next slide
+  function nextSlide() {
+    const slides = document.querySelectorAll(".testimonial-slide");
+    showSlide((currentIndex + 1) % slides.length);
+  }
+
+  // Start auto-scroll
+  function startAutoScroll() {
+    interval = setInterval(nextSlide, 5000);
+  }
+
+  // Stop auto-scroll (optional for debugging or manual navigation)
+  function stopAutoScroll() {
+    clearInterval(interval);
+  }
+
+  // Event listener for slide indicators
+  function setupIndicators() {
+    const indicators = document.querySelectorAll(".carousel-indicator");
+    indicators.forEach((indicator, i) => {
+      indicator.addEventListener("click", () => {
+        showSlide(i);
+        stopAutoScroll(); // Optional: stop auto-scroll on manual interaction
+        startAutoScroll(); // Restart auto-scroll after interaction
+      });
+    });
+  }
+
+  // Initialize carousel
+  window.addEventListener("load", () => {
+    showSlide(0);
+    startAutoScroll();
+    setupIndicators();
+  });
+</script>
+
+<section class="border-white/20 border-b text-white py-12">
+  <div class="overflow-hidden mx-auto max-w-7xl px-8 border-white/20">
+    <!-- Section Heading -->
+    <div class="text-center mb-8">
+      <p class="text-white font-display uppercase text-3xl lg:text-6xl relative">
+        What our clients say
+      </p>
+    </div>
+
+    <!-- Testimonial Slides -->
+    <div class="relative">
+      <div class="testimonial-slide flex flex-col items-center text-justify">
+        <p class="text-[#ed642c] leading-relaxed text-lg lg:text-xl max-w-3xl drop-shadow-md">
+          "Stratus Softworks didn’t just help build CredAlt—they helped shape it. We needed a secure, HIPAA-compliant platform up and running, and they made it happen. Their quality of work is top tier. Despite how convoluted the healthcare SaaS space can be, they truly understood what we were trying to achieve and translated that understanding into a functional MVP.
+          <br /><br />
+          If you’re looking for a partner who can take your ideas and lead you in the right direction, Stratus Softworks is it. They don’t just code—they create solutions that help you move your business forward."
+        </p>
+        <div class="flex items-center mt-6 space-x-4">
+          <img src="/images/kayward.jpeg" alt="Kay Ward" class="w-12 h-12 rounded-full object-cover" />
+          <div>
+            <span class="block font-semibold text-white">Kay Ward</span>
+            <span class="block text-sm text-gray-400">CEO of CredAlt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-slide hidden flex flex-col items-center text-justify">
+        <p class="text-[#ed642c] leading-relaxed text- lg:text-xl max-w-3xl drop-shadow-md">
+          "Working with Stratus Softworks was a game-changer for us. Our disaster recovery project had some major challenges, but they came in, quickly grasped the business priorities, and delivered a solution that far exceeded our expectations. They didn’t just fix issues—they helped us think bigger, implementing a scalable, high-performing platform ahead of schedule.
+          Beyond their technical expertise, their collaborative approach really stood out. They felt like an extension of our team, offering valuable guidance that improved our roadmap and strengthened our relationships with key partners.
+          If you’re looking for a team that combines technical brilliance with a true understanding of your business goals, Stratus Softworks is it."
+        </p>
+        <div class="flex items-center mt-6 space-x-4">
+          <img src="/images/sidneyburks.png" alt="Sidney Burks" class="w-12 h-12 rounded-full object-cover" />
+          <div>
+            <span class="block font-semibold text-white">Sidney Burks</span>
+            <span class="block text-sm text-gray-400">CTO of Boundless Digital</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide Indicators -->
+    <div class="flex justify-center space-x-2 mt-8">
+      <button class="carousel-indicator w-3 h-3 rounded-full bg-[#ed642c]"></button>
+      <button class="carousel-indicator w-3 h-3 rounded-full bg-gray-600"></button>
     </div>
   </div>
-  <div class="flex flex-col justify-between h-full">
-    <p class="text-[#ed772f]">
-      Mark has an exceptional eye for design, and collaborating with him has
-      been an absolute delight. I am looking forward to partnering with him on
-      upcoming projects. I wholeheartedly endorse him to anyone in search of
-      exceptional, top-notch work.
-    </p>
-    <div class="mt-3">
-      <span class="block font-semibold mt-3">Lindsay Chen</span>
-      <span class="block text-eagle">Founder of CodeCraft Studios</span>
-    </div>
-  </div>
-  <div class="flex flex-col justify-between h-full">
-    <p class="text-[#ef9335]">
-      Ethan has been an invaluable asset in the realm of design, and I struggled
-      to keep pace with his work speed during our collaboration. His designs are
-      sleek, and he consistently delivers substantial value; he continuously
-      refines his designs and introduces enhancements.
-    </p>
-    <div class="mt-3">
-      <span class="block font-semibold mt-3">Gabriel Maritinez</span>
-      <span class="block text-eagle">Innovator at PixelPerfect Creations</span>
-    </div>
-  </div>
-  <div class="flex flex-col justify-between h-full">
-    <p class="text-eagle">
-      Andrew stands out as a distinctive blend of designer and developer who
-      comprehends business requirements. He utilized his prior experience to
-      swiftly create multiple landing pages for SparkLynx.
-    </p>
-    <div class="mt-3">
-      <span class="block font-semibold mt-3">Jessica Carter</span>
-      <span class="block text-eagle">Co-Founder of SparkLynx Technologies</span>
-    </div>
-  </div>
-</div>
+</section>
