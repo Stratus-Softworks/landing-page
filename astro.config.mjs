@@ -6,5 +6,10 @@ export default defineConfig({
   // add yur domain name here
   site: 'https://stratussoftworks.dev',
   compressHTML: true,
-  integrations: [sitemap(), mdx(), tailwind()]
+  integrations: [sitemap(), mdx(), tailwind()],
+  content: {
+    collections: {
+      blog: './src/pages/blog',
+    }
+  }
 });
