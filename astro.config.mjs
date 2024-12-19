@@ -7,9 +7,5 @@ export default defineConfig({
   site: 'https://stratussoftworks.dev',
   compressHTML: true,
   integrations: [sitemap(), mdx(), tailwind()],
-  content: {
-    collections: {
-      blog: './src/pages/blog',
-    }
-  }
+
 });
