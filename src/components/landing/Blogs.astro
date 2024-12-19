@@ -18,7 +18,7 @@ const blogPosts = Object.entries(import.meta.glob('/src/pages/blog/*.mdx', { eag
       {blogPosts.map(([path, post]) => {
         const slug = path
           .replace('/src/pages/blog/', '')
-          .replace('.md', '');
+          .replace('.mdx', '');
         const { title, description } = post.frontmatter;
 
         return (
