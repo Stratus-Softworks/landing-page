@@ -24,7 +24,7 @@
 
   // Start auto-scroll
   function startAutoScroll() {
-    interval = setInterval(nextSlide, 5000);
+    interval = setInterval(nextSlide, 15000);
   }
 
   // Stop auto-scroll (optional for debugging or manual navigation)
@@ -52,8 +52,8 @@
   });
 </script>
 
-<section class="border-white/20 border-b text-white py-12">
-  <div class="overflow-hidden mx-auto max-w-7xl px-8 border-white/20">
+<section class="border-white/20 border-b">
+  <div class="mx-auto border-white/20 border-x max-w-7xl py-8">
     <!-- Section Heading -->
     <div class="text-center mb-8">
       <p class="text-white font-display uppercase text-3xl lg:text-6xl relative">
@@ -62,7 +62,20 @@
     </div>
 
     <!-- Testimonial Slides -->
-    <div class="relative">
+      <div class="testimonial-slide hidden flex flex-col items-center text-justify">
+        <p class="text-[#ed642c] leading-relaxed text- lg:text-xl max-w-3xl drop-shadow-md">
+          "Stratus Softworks brought the expertise we struggled to find in the open market, helping us save a critical customer relationship by delivering a delayed and over-budget project on time. Their ability to work independently, think strategically, and implement best practices removed our cognitive load and empowered our team to focus on growth. Reliable, professional, and results-driven—Stratus delivers the whole package."
+        </p>
+        <div class="flex items-center mt-6 space-x-4">
+          <img src="/images/sidneyburks.png" alt="Sidney Burks" class="w-12 h-12 rounded-full object-cover" />
+          <div>
+            <span class="block font-semibold text-white">Sidney Burks</span>
+            <span class="block text-sm text-gray-400">CTO of Boundless Digital</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
       <div class="testimonial-slide flex flex-col items-center text-justify">
         <p class="text-[#ed642c] leading-relaxed text-lg lg:text-xl max-w-3xl drop-shadow-md">
           "Stratus Softworks didn’t just help build CredAlt—they helped shape it. We needed a secure, HIPAA-compliant platform up and running, and they made it happen. Their quality of work is top tier. Despite how convoluted the healthcare SaaS space can be, they truly understood what we were trying to achieve and translated that understanding into a functional MVP.
@@ -74,21 +87,6 @@
           <div>
             <span class="block font-semibold text-white">Kay Ward</span>
             <span class="block text-sm text-gray-400">CEO of CredAlt</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-slide hidden flex flex-col items-center text-justify">
-        <p class="text-[#ed642c] leading-relaxed text- lg:text-xl max-w-3xl drop-shadow-md">
-          "Working with Stratus Softworks was a game-changer for us. Our disaster recovery project had some major challenges, but they came in, quickly grasped the business priorities, and delivered a solution that far exceeded our expectations. They didn’t just fix issues—they helped us think bigger, implementing a scalable, high-performing platform ahead of schedule.
-          Beyond their technical expertise, their collaborative approach really stood out. They felt like an extension of our team, offering valuable guidance that improved our roadmap and strengthened our relationships with key partners.
-          If you’re looking for a team that combines technical brilliance with a true understanding of your business goals, Stratus Softworks is it."
-        </p>
-        <div class="flex items-center mt-6 space-x-4">
-          <img src="/images/sidneyburks.png" alt="Sidney Burks" class="w-12 h-12 rounded-full object-cover" />
-          <div>
-            <span class="block font-semibold text-white">Sidney Burks</span>
-            <span class="block text-sm text-gray-400">CTO of Boundless Digital</span>
           </div>
         </div>
       </div>
